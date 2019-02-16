@@ -1,4 +1,7 @@
 #headingpic {
+    height: 245px;
+    width: 100%;
     background-image: url("../img/salmon.png");
     background-color: blanchedalmond;
+    background-size: cover;
 }
