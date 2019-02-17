@@ -59,15 +59,13 @@ for(var j = 0; j < hours.length; j++) {
   footerRow.appendChild(bottom);
 }
 
-table.appendChild(footerRow);
-
 for(var row = 0; row < objects.length; row++) { //starting for loop to go through objects array
   var newRow = document.createElement('tr'); //defining new row variable - creating DOM element row
   var locationName = document.createElement('td'); //defining location name variable - creating DOM elem. table data
   locationName.innerText = objects[row].location; //taking table data created and inserting text into it
   newRow.appendChild(locationName); //taking new row created and inserting location name into correct table spot
 
-  for(var column = 0; column < hours.length; column++) {
+  for(var column = 0; column < hours.length; column++) { //
     var newColumn = document.createElement('td');
     newColumn.innerText = objects[row].sum[column];
     newRow.appendChild(newColumn);
