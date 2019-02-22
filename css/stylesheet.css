@@ -81,3 +81,7 @@ td:last-child {
   height: 150px;
   width: 250px;
 }
+
+#form {
+  background-color: lightgray;
+}
