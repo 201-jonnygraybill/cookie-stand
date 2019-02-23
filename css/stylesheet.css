@@ -82,6 +82,10 @@ td:last-child {
   width: 250px;
 }
 
-#form {
-  background-color: lightgray;
+#submitform {
+  background-color: #666666;
+}
+
+input[type="text"], input[type="number"] {
+  background-color: lightseagreen; 
 }
