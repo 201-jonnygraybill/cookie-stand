@@ -14,17 +14,17 @@
     <fieldset>
       <legend>Add A New Location</legend>
       
-      <label for="location">Location</label>
-      <input name="location" type="text" />
+      <label for="name">Location</label>
+      <input name="name" type="text" required/>
       <br>
-      <label for="minimumcustomers">Minimum Customers</label>
-      <input name="minimumcustomers" type="text" />
+      <label for="min">Minimum Customers</label>
+      <input name="min" type="number" step="0.1" required [0-1000]/>
       <br>
-      <label for="maximumcustomers">Maximum Customers</label>
-      <input name="maximumcustomers" type="text" />
+      <label for="max">Maximum Customers</label>
+      <input name="max" type="number" step="0.1" required [0-1000]/>
       <br>
-      <label for="averagecustomers">Average Sale</label>
-      <input name="averagecustomers" type="text" />
+      <label for="avgSale">Average Sale</label>
+      <input name="avgSale" type="number" step="0.1" required [0-1000]/>
 
       <br>
       <button id="buttonid" type="submit">Create New Location!</button>
