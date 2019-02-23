@@ -19,6 +19,60 @@ var hours = [ //hours of operation for each cookie stand
 ];
 
 var table = document.getElementById('shell'); //getting the location from DOM
+var submitForm = document.getElementById('submitform');
+
+
+submitForm.addEventListener('submit', function() {
+  handleFormSubmit();
+});
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  var newLocation = event.target.location.value;
+  var newMinimumCustomer = event.target.minimumcustomers.value;
+  var newMaximumCustomer = event.target.maximumcustomers.value;
+  var newAverage = event.target.averagecustomers.value;
+
+  new Location(newLocation, newMinimumCustomer, newMaximumCustomer, newAverage);
+
+  event.target.newLocation.value = null;
+  event.target.newMinimumCustomer.value = null;
+  event.target.newMaximumCustomer.value = null;
+  event.target.newAverage.value = null;
+
+  for(var i = 0; i < hours.length + 1; i++) {
+    var answer = Math.floor(Math.random() * ((this.newMaximumCustomer + 1) - this.newMinimumCustomer)) + this.newMinimumCustomer;
+    var cookiesPerHr = Math.floor(answer * this.newAverage);
+    this.sum.push(cookiesPerHr);
+    this.total = this.total + cookiesPerHr;
+  }
+
+  this.render = function() {
+    var newRow = document.createElement('tr');
+    var newLocationName = document.createElement('td');
+    newLocationName.innerText = this.newLocation;
+    newRow.appendChild(newLocationName);
+
+    for (var col = 0; col < hours.length; col++) {
+      var newData = document.createElement('td');
+      newData.innerText = this.sum[col];
+      newRow.appendChild(newData);
+    }
+
+    var newLocationTotals = document.createElement('td');
+    newLocationTotals.innerText = this.total;
+    newRow.appendChild(newLocationTotals);
+
+    table.appendChild(newRow);
+
+  };
+
+}
+
+
+
+
+
 
 // eslint-disable-next-line no-redeclare
 function Location (name, min, max, avgSale, sum, total) { //creating constructor function parameters
@@ -123,105 +177,3 @@ footerRow.appendChild(grandTotal);
 
 
 ////////
-
-
-var postList = document.getElementById('postlist');
-var submitForm = document.getElementById('submitform');
-var addLocation = [];
-
-var Add = function(location, min, max, avg) { //Initiating constructor function
-  this.location = location;
-  this.min = min;
-  this.max = max;
-  this.avg = avg;
-};
-
-Add.prototype.render = function() { //Prototype render for data added from form to be appended to ul
-  var liEl = document.createElement('li');
-  liEl.innerHTML = ' <b>' + this.location + ': </b><em>' + this.min + this.max + this.avg + '</em>';
-  return liEl;
-
-};
-
-function handleAddSubmit(event) { //Event handler
-  event.preventDefault();
-  var location = event.target.location.value;
-  var min = event.target.minimumcustomers.value;
-  var max = event.target.maximumcustomers.value;
-  var avg = event.target.averagecustomers.value;
-
-  var newAdd = new Add(location, min, max, avg);
-
-  event.target.location.value = null;
-  event.target.minimumcustomers.value = null;
-  event.target.maximumcustomers.value = null;
-  event.target.averagecustomers.value = null;
-  
-  addLocation.unshift(newAdd);
-  renderAddLocations();
-}
-
-function renderAddLocations() { //Render added location 
-  postList.innerHTML = '';
-  for(var i = 0; i < addLocation.length; i++) {
-    postList.appendChild(addLocation[i].render());
-  }
-}
-
-submitForm.addEventListener('submit', handleAddSubmit);
-
-
-
-
-
-
-
-
-// function myFunction() {
-//   alert('The form was submitted');
-// }
-
-// document.getElementById('newlistitem').addEventListener('submit', myFunction);
-
-
-
-
-
-
-// var AddData = function(addName, addMin, addMax, addAvg) {
-//   this.addName = addName;
-//   this.addMin = addMin;
-//   this.addMax = addMax;
-//   this.addAvg = addAvg;
-// };
-
-// AddData.prototype.render = function() {
-//   var liEl = document.createElement('li');
-//   // liEl.innerHtml = '<b>' + this.username + ': </b><em>' + this.text + '</em>';
-//   liEl.innerHTML = ' <b>' + this.addName + ': </b><em>' + this.addMin + this.addMax + this.addAvg + '</em>';
-//   return liEl;
-
-// };
-
-// function handleNewAddSubmit(event) {
-//   event.preventDefault();
-//   var location = event.target.who.value;
-//   var data = event.target.says.value;
-
-//   var newItem = new AddData(location, data);
-
-//   event.target.who.value = null;
-//   event.target.says.value = null;
-  
-//   allNewAdds.unshift(newItem);
-//   renderAllNewAdds();
-// }
-
-// function renderAllNewAdds() {
-//   list.innerHTML = '';
-//   for(var i = 0; i < allNewAdds.length; i++) {
-//     list.appendChild(allNewAdds[i].render());
-//   }
-// }
-
-// form.addEventListener('submit', handleNewAddSubmit);
