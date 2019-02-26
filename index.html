@@ -9,33 +9,60 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 <body>
-    <div id="topbox">
-        <p>.</p>
-    </div>
-    <br><br>
-    <img id ="logo" src="../cookie-stand/img/salmonlogo.png">
-    <h1 id="maintext">Salmon Cookies</h1>
+  <div id="tophalf">
+    <ul class="headrow">
+      <li><img id="salmonlogo" src="../cookie-stand/img/salmonlogo.png"/></li>
+      <li id="nav1">- Order</li>
+      <li id="nav2">- Merchandise</li>
+      <li id="nav3">- About Us </li>
+      <li id="nav4">- Sales Login</li>
+      <p id="maintext">Salmon Cookies</p>
+    </ul>
 
-    <div class="row">
-            <div class="column">
-              <h2>About Us</h2>
-              <p>Click here to learn more about our story.</p>
-              <img id="baker" src="../cookie-stand/img/baker.jpeg">
-            </div>
-            <div class="column">
-              <h2>Order</h2>
-              <p>Click here to submit a custom order.</p>
-              <img id="order" src="../cookie-stand/img/order.jpeg">
-            </div>
-            <div class="column">
-              <h2>Sales Projections</h2>
-              <p>Click here to view our sales projections.</p>
-              <a href="pages/sales.html">
-                    <img id="projections" src="../cookie-stand/img/projections.jpeg">
-                  </a>
-            </div>
+    <div class="carousel">
+        <input id="image1" type="radio" name="image-selector" checked="checked" />
+        <label for="image4">View image 4</label>
+        <img src="../cookie-stand/img/frosted-cookie.png" style="height: 300px"/>
+      
+        <input id="image2" type="radio" name="image-selector" />
+        <label for="image1">View image 1</label>
+        <img src="../cookie-stand/img/cutter.jpeg" style="height: 300px" />
+      
+        <input id="image3" type="radio" name="image-selector" />
+        <label for="image2">View image 2</label>
+        <img src="../cookie-stand/img/family.jpg" style="height: 300px" />
+      
+        <input id="image4" type="radio" name="image-selector" />
+        <label for="image3">View image 3</label>
+        <img src="../cookie-stand/img/chinook.png" style="height: 300px" />
+        
+        <label for="image4">View image 4</label>
+        <label for="image1">View image 1</label>
+      </div>
+      <img id="firstbreak" src="../cookie-stand/img/salmonlogoinverted.png"/>
+  </div>
+  <br><br><br><br><br><br><br><br>
+  <div id="bottomhalf" class="row">
+          <div id="firstcolumn" class="column">
+            <h2>Column 1</h2>
+            <p>Some text..</p>
           </div>
-
+          <div class="column">
+            <h2>Column 2</h2>
+            <p>Some text..</p>
+          </div>
+          <div class="column">
+            <h2>Column 3</h2>
+            <p>Some text..</p>
+          </div>
+        </div>
+  </div>
+  <div id="blank">
+    <br><br>
+  </div>
+  <footer>
+    <br><br><br><br><br><br>
+  </footer>
 
 </body>
 

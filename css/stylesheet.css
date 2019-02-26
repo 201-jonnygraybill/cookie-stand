@@ -1,12 +1,19 @@
-body {
-  background-image: url(../img/background.png);
+/* body {
+  height: 1024px;
+  width: 1000px;
+} */
+
+#tophalf {
+  height: 512px;
+  width: 1175px;
+  background-color: rgb(228, 224, 224);
+  font-family: 'Indie Flower', cursive;
 }
 
-#logo {
-  display: block;
-  margin-left: auto;    
-  margin-right: auto;
-  width: 60%;
+
+#salmonlogo {
+  height: 100px;
+  width: 300px;
 }
 
 #maintext {
@@ -15,20 +22,151 @@ body {
   color: white;
   z-index: 1;
   position: relative;
-  bottom: 120px;
-  left: 20px;
+  top: -110px;
+  left: -420px;
+  font-size: 20px;
+} 
+
+ul li:not(:first-child) {
+  display: inline-block;
+  position: relative;
+  left: 350px;
+  top: -70px;
+  font-size: 20px;
+  padding: 10px;
 }
 
-#topbox {
-  background-color: salmon;
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 40px;
-  text-align: right;
+#nav1, #nav2, #nav3, #nav4 {
+  padding-right: 30px;
+  font-size: 35px;
 }
+
+.carousel {
+  position:relative;
+  width:500px;
+  margin:0px auto;
+  box-shadow:0px 0px 40px #000;
+  border-radius: 10px;
+}
+.carousel > img {
+  display:none;
+  width:100%;
+}
+.carousel > input {
+  position:absolute;
+  left:-9999px;
+}
+.carousel > input:checked + label + img {
+  display:block;
+}
+
+.carousel > label,
+.carousel > input:checked ~ label ~ label ~ label ~ label {
+  display:none;
+}
+.carousel > input:checked + label {
+  display:block;
+  left:0;
+}
+.carousel > input:checked ~ label ~ label ~ label {
+  display:block;
+  right:0;
+}
+
+.carousel > label {
+  position:absolute;
+  top:0;
+  width:25%;
+  height:100%;
+  visibility:hidden;
+}
+.carousel > label:before {
+  content:'';
+  display:block;
+  position:absolute;
+  width:100%;
+  height:100%;
+  visibility:visible;
+}
+.carousel > label:after {
+  display:block;
+  position:absolute;
+  top:50%;
+  width:25px;
+  height:25px;
+  line-height:22px;
+  margin:-15px 10px 0 10px;
+  background-color:black;
+  color:white;
+  font-family:'Arial';
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  visibility:hidden;
+  border:2px solid white;
+  border-radius:20px;
+  box-shadow:0 3px 4px black;
+}
+.carousel > label:hover:after {
+  visibility:visible;
+}
+
+.carousel > input:checked + label:after {
+  left:0;
+  content:'\00AB';
+}
+.carousel > input:checked ~ label ~ label ~ label:after {
+  right:0;
+  content:'\00BB';
+}
+
+
+
+#firstbreak {
+  height: 50px;
+  width: 100px;
+  position: absolute;
+  z-index: -1;
+  top: 550px;
+  left: 535px;
+}
+
+.column {
+  float: left;
+  width: 32%;
+  padding: 0px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 60px;
+  background-color: rgb(228, 224, 224);
+}
+
+.column h2 {
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#firstcolumn {
+  margin-left: 20px;
+}
+
+footer {
+  background-color: red;
+}
+
+
+
+
+
 
 #salesheading {
   text-align: center;
@@ -58,34 +196,3 @@ td:last-child {
   background-color: greenyellow;
 }
 
-.column {
-  float: left;
-  width: 32.333333%;
-  height: 300px;
-  text-align: center;
-  background: rgb(184, 180, 180);
-  border: solid 3px;
-}
-
-#baker {
-  height: 150px;
-  width: 250px;
-}
-
-#projections {
-  height: 150px;
-  width: 250px;
-}
-
-#order {
-  height: 150px;
-  width: 250px;
-}
-
-#submitform {
-  background-color: #666666;
-}
-
-input[type="text"], input[type="number"] {
-  background-color: lightseagreen; 
-}
