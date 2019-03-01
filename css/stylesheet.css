@@ -160,8 +160,9 @@ ul li:not(:first-child) {
 }
 
 .column {
+  margin-left: 40px;
   float: left;
-  width: 32%;
+  width: 350px;
   padding: 0px;
   height: 200px;
   border: 1px solid black;
@@ -189,7 +190,7 @@ ul li:not(:first-child) {
 }
 
 footer {
-  width: 100%;
+  width: 1175px;
   text-align: right;
   font-size: 20px;
   background-color: darkslateblue;
@@ -215,6 +216,8 @@ table {
 
 #salesheading {
   text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 th {
@@ -237,4 +240,9 @@ td:first-child {
 
 td:last-child {
   background-color: darkslateblue;
+}
+
+footer a {
+  padding-right: 20px;
+  padding-left: 20px;
 }
